@@ -1,0 +1,18 @@
+﻿@model List<WebApp_Project.Models.Details.OrderDetail>;
+@{
+    ViewData["Title"] = "PostOrder";
+}
+
+<h1>PostOrder</h1>
+@foreach (var order in Model)
+{
+
+    <form method="get" asp-controller="Buyer" asp-action="Detail" asp-route-id="@order.Id">
+        <p>Place to get food : @order.Place</p>
+        <p>Restaurant : @order.Restaurant</p>
+        <p>Rider Name : @order.Rider.FirstName</p>
+        <button type="submit" class="btn btn-primary my-2">สั่งอาหาร</button>
+        <hr />
+    </form>
+}
+
